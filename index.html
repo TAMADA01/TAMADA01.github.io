@@ -1,11 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main</title>
+    <title>Main page</title>
+    <link rel="stylesheet" href="/CSS/style.css">
 </head>
 <body>
-    
+    <header>
+        <section class="header-static">
+            <div class="flex-container">
+                <div class="static-title">
+                    <div class="static-page-title-logo"></div>
+                    <p class="static-title-text">
+                        <span>User pages</span> - Profile
+                    </p>
+                </div>
+                <ul class="static-page-links">
+                    <li class="static-page-button">
+                        <div class="static-page-logo"></div>
+                        <p>Statistic</p>
+                    </li>
+                    <li class="static-page-button">
+                        <div class="static-page-logo"></div>
+                        <p>Invoices</p>
+                    </li>
+                    <li class="static-page-button">
+                        <div class="static-page-logo"></div>
+                        <p>Schedule</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <nav class="header-nav">
+            <div class="flex-container">
+                <div class="nav">
+                    <a href="/" class="nav-button  nav-button-selected">
+                        <div class="nav-button-logo"></div>
+                        <p>Home</p>
+                    </a>
+                    <a href="/Pages/map.html" class="nav-button">
+                        <div class="nav-button-logo"></div>
+                        <p>Map</p>
+                    </a>
+                    <a href="/Pages/time.html" class="nav-button">
+                        <div class="nav-button-logo"></div>
+                        <p>Time</p>
+                    </a>
+                </div>
+                <div class="nav">
+                    <a href="" class="nav-button">
+                        <div class="nav-button-logo"></div>
+                        <p>Notes</p>
+                    </a>
+                    <a href="" class="nav-button">
+                        <div class="nav-button-logo"></div>
+                        <p>Friends</p>
+                    </a>
+                    <a href="" class="nav-button">
+                        <div class="nav-button-logo"></div>
+                        <p>Photos</p>
+                    </a>
+                    <a href="" class="nav-button">
+                        <div class="nav-button-logo"></div>
+                        <p>Settings</p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="content-container">
+                <section class="content">
+                    <div class="card">
+                        <div class="content-block">
+                            <div class="content-block-image">
+                                <img src="Images/preview.png" alt="Картинка">
+                            </div>
+                            <div class="content-block-text">
+                                <div class="content-block-title">
+                                    <h1>Резюме</h1>
+                                </div>
+                                <p>Я Бухарин Алексей Павлович.</p>
+                                <p>Работал на таких языках как: C#, python, php. На C# я создавал игры на движке Unity и пробовал создать сайт на ASP.NET с MVC. На python сейчас работаю в сфере создания ПО. Создаю логику обработки значений с температурных датчиков крио-контроллера. Так же создавал телеграмм ботов с помощью aiogram. На php разрабатывал сайт с помощью фраймворка Laravel. 
+                                    Сейчас интересует меня WEB разработка. </p>
+                                <p>HTML и CSS знаю. Оценить мои знания можете по этому сайту :) С адаптивной версткой знаком. Делал анимации в CSS.
+                                    Знаю основы JS. С библиотеками не работал. Делал на JS обработку форм, менял через него CSS и HTML. С Vue.js не работал, как и с react.js</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="sidebar">
+                    <div class="card">
+                        <div class="account">
+                            <div class="account-photo"></div>
+                            <div class="account-title">
+                                <h3 class="account-name">Alexey Bukharin</h3>
+                                <p class="account-profession">UX/UI Designer</p>
+                            </div>
+                            <div class="account-links">
+                                <a href="https://t.me/TAMADA0R" class="account-link">
+                                    <img src="Images/Telegram.png" alt="">
+                                </a>
+                                <a href="https://vk.com/alexfitnesss" class="account-link">
+                                    <img src="Images/VK.png" alt="">
+                                </a>
+                                <a href="https://github.com/TAMADA01" class="account-link">
+                                    <img src="Images/github.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">
+                            <div class="card-title-container">
+                                <div class="card-title-content">
+                                    <p>Navigation</p>
+                                    <div class="arrow arrow-top"></div>
+                                </div>
+                                <div class="button-line">
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <ul class="sidebar-buttons">
+                                <li>
+                                    <a href="" class="sidebar-button">
+                                        <div class="sidebar-button-logo">
+
+                                        </div>
+                                        <p class="sidebar-button-text">
+                                            My profile
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="sidebar-button">
+                                        <div class="sidebar-button-logo">
+
+                                        </div>
+                                        <p class="sidebar-button-text">
+                                            Balance
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="sidebar-button">
+                                        <div class="sidebar-button-logo">
+
+                                        </div>
+                                        <p class="sidebar-button-text">
+                                            Connection
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="sidebar-button">
+                                        <div class="sidebar-button-logo">
+
+                                        </div>
+                                        <p class="sidebar-button-text">
+                                            Friends
+                                        </p>
+                                    </a>
+                                </li>
+                                <div class="line"></div>
+                                <li>
+                                    <a href="" class="sidebar-button">
+                                        <div class="sidebar-button-logo">
+
+                                        </div>
+                                        <p class="sidebar-button-text">
+                                            Events
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="sidebar-button">
+                                        <div class="sidebar-button-logo">
+
+                                        </div>
+                                        <p class="sidebar-button-text">
+                                            Balance
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card-content">
+                            <ul class="sidebar-buttons">
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">
+                            <div class="card-title-container">
+                                <div class="card-title-content">
+                                    <p>Share your thoughts</p>
+                                    <div class="arrow arrow-top"></div>
+                                </div>
+                                <div class="button-line">
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <form action="" class="form">
+                                <textarea name="" id="" class="form-textarea" placeholder="Enter your message..."></textarea>
+                                <button type="submit" class="form-button">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
