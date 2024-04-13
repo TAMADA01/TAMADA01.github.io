@@ -164,14 +164,6 @@ body{
     gap: calc(var(--gap-content)*2);
 }
 
-.content{
-
-}
-
-.sidebar{
-
-}
-
 .card{
     margin-bottom: var(--gap-content);
     background-color: var(--white-color);
@@ -340,4 +332,10 @@ body{
 
 .arrow-top{
     transform: rotate(-45deg);
+}
+
+.map{
+    width: 600px;
+    height: 400px;
+    background-color: var(--black-color);
 }
