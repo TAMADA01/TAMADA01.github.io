@@ -6,7 +6,7 @@ const routes ={
     "/map" : {
         url : "Views/map.html",
         title : "Map",
-        src : ["https://api-maps.yandex.ru/v3/?apikey=4eca7cbc-2734-4698-a824-91ad09045a1f&lang=ru_RU", "JS/map.js"]
+        src : ["https://api-maps.yandex.ru/2.1/?apikey=4eca7cbc-2734-4698-a824-91ad09045a1f&lang=ru_RU", "JS/map.js"]
     },
     "/time" : {
         url : "Views/time.html",
