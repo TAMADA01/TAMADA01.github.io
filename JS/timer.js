@@ -1,1 +1,1 @@
-alert("Timer");
+console.log("Timer")

@@ -23,14 +23,17 @@ function route(event){
 };
 
 function locationHandler(){
-    const location = window.location.pathname;
+    let location = window.location.pathname;
     
     if (location.length == 0) {
         location = "/";
     }
 
+    if (routes[location] === undefined){
+        location = "/";
+    }
     const route = routes[location];
-    
+
     fetch(route.url)
     .then(response => response.text())
     .then(result => document.querySelector("#app").innerHTML = result)

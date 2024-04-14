@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
-}
-
 :root{
     --blue-color: #5095EC;
     --black-color: #505050;
@@ -21,6 +12,16 @@
     --gap-content: 16px;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: var(--black-color);
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -28,9 +29,14 @@ a{
 
 ul{
     list-style-type: none;
+    margin: 0;
 }
 
-h1{
+p{
+    margin: 0;
+}
+
+/* h1{
     font-size: 36px;
     line-height: 32px;
 }
@@ -38,7 +44,7 @@ h1{
 h3{
     font-size: 18px;
     line-height: 21.09px;
-}
+} */
 
 img{
     width: 100%;
@@ -50,96 +56,62 @@ body{
     background-color: var(--bg-color);
 }
 
-.container{
-    width: 96vw;
-    height: 100%;
-    margin: auto;
-}
-
-.flex-container{
-    width: 96vw;
-    height: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .header-static{
     background-color: var(--white-color);
     height: 64px;
-    display: flex;
-    align-items: center;
     box-shadow: 0px 1px 1px 0px #0000001A;
 }
 
 .static-title{
-    display: flex;
-    text-align: center;
-    align-items: center;
     font-size: 18px;
+    gap: var(--gap-content);
 }
 
-.static-page-title-logo{
-    width: 24px;
-    height: 24px;
-    background-color: var(--black-color);
+.static-title-logo{
+    transform: rotate(180deg);
 }
 
 .static-title-text{
     font-size: 18px;
     font-weight: 400;
     line-height: 21.09px;
-    text-align: left;
-
 }
 
 .static-title-text span{
     font-size: 18px;
     font-weight: 500;
     line-height: 21.09px;
-    text-align: left;
-
 }
 
 .static-page-links{
-    display: flex;
-    flex-direction: row;
     gap: calc(var(--gap-content)/2);
-    align-items: center;
 }
 
 .static-page-button{
-    display: flex;
-    flex-direction: column;
     gap: calc(var(--gap-content)/2);
-    align-items: center;
 }
 
-.static-page-logo{
-    width: 24px;
-    height: 24px;
-    background-color: var(--blue-color);
+.static-page-button-logo *{
+    color: var(--blue-color) !important; 
 }
 
 .header-nav{
     background-color: var(--bg2-color);
     height: 40px;
-    display: flex;
-    align-items: center;
+    max-height: 40px;
     box-shadow: 0px 1px 1px 0px #0000001A;
 }
 
 .nav{
-    height: 100%;
-    display: flex;
+    /* height: 100%;
+    display: flex; */
 }
 
 .nav-button{
     height: 100%;
     padding: 0 16px;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     gap: calc(var(--gap-content)/2);
 }
 
@@ -151,26 +123,26 @@ body{
     background-color: var(--grey-color);
 }
 
-.nav-button-logo{
-    width: 20px;
-    height: 20px;
-    background-color: var(--black-color);
+.content-container{
+    /* margin-top: calc(var(--gap-content)*2); */
+    /* display: flex; */
+    /* gap: calc(var(--gap-content)*2); */
 }
 
-.content-container{
-    margin-top: calc(var(--gap-content)*2);
-    display: grid;
-    grid-template-columns: 5fr 1fr;
-    gap: calc(var(--gap-content)*2);
+.content{
+    /* width: 100%; */
+}
+
+.sidebar{
+    /* width: 400px; */
 }
 
 .card{
     margin-bottom: var(--gap-content);
     background-color: var(--white-color);
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-content);
     box-shadow: 0px 0px 2px 0px #0000001A;
+    border-radius: 0;
+    border: none;
 }
 
 .card-title{
@@ -180,21 +152,13 @@ body{
 
 .card-title-container{
     padding: 8px 0px 0px 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
 }
 
 .card-title-content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 0px 16px;
 }
 
 .card-title-logo{
-    width: 20px;
-    height: 20px;
     background-color: var(--grey-color);
 }
 
@@ -208,15 +172,12 @@ body{
 }
 
 .sidebar-buttons{
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-content);
+    
+    /* gap: var(--gap-content); */
 }
 
 .sidebar-button{
-    display: flex;
-    padding: 0px 108px 0px 16px;
-    align-items: center;
+    padding: 0px 16px;
 }
 
 .sidebar-button-logo{
@@ -227,33 +188,30 @@ body{
 }
 
 .form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: calc(var(--gap-content)/2);
+    /* gap: calc(var(--gap-content)/2); */
     padding: 0 16px;
 }
 
 .form-textarea{
-    width: 100%;
-    height: 100px;
     resize: none;
+    width: 100%;
+    /* height: 100px;
     border: var(--grey-color) 1px solid;
     padding: 8px 16px;
     border-radius: 4px;
-    line-height: 20px;
+    line-height: 20px; */
 }
 
 .form-button{
-    width: 100%;
     background-color: var(--blue-color);
     color: var(--white-color);
-    border: none;
-    border-radius: 4px;
-    padding: 8px 20px;
-    font-weight: 500;
-    line-height: 24px;
-    margin-bottom: 16px;
+    border: var(--blue-color) 0.2rem solid;
+}
+
+.form-button:hover{
+    background-color: var(--white-color);
+    color: var(--blue-color);
+    border: var(--blue-color) 0.2rem solid;
 }
 
 .account{
@@ -261,7 +219,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--gap-content);
+    /* gap: var(--gap-content); */
 }
 
 .account-photo{
@@ -280,7 +238,7 @@ body{
 
 .account-links{
     display: flex;
-    gap: calc(var(--gap-content)/2);
+    /* gap: calc(var(--gap-content)/2); */
 }
 
 .account-link{
@@ -296,10 +254,11 @@ body{
 
 .content-block{
     padding: 30px 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gap-content);
-    align-items: center;
+    padding-top: 0;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    /* gap: var(--gap-content); */
+    /* align-items: center; */
 }
 
 .content-block-image{
@@ -308,9 +267,7 @@ body{
 
 .content-block-text{
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--gap-content)/2);
+    /* gap: calc(var(--gap-content)/2); */
     align-items: normal;
     text-align: justify;
     
@@ -334,8 +291,13 @@ body{
     transform: rotate(-45deg);
 }
 
+.arrow-down{
+    transform: rotate(135deg);
+}
+
 .map{
-    width: 600px;
-    height: 400px;
-    background-color: var(--black-color);
+    min-width: 300px;
+    min-height: 200px;
+    height: 30vw;
+    width: 100%;
 }
