@@ -1,26 +1,6 @@
-async function initMap() {
-    await ymaps3.ready;
-
-    const {YMap, YMapDefaultSchemeLayer} = ymaps3;
-    
-    const mapContainer = document.getElementById('map');
-
-    mapContainer.innerHTML = "";
-    const map = new YMap(
-        mapContainer,
-        {
-            location: {
-                center: [37.225844, 56.741702],
-                zoom: 15
-            },
-        }
-    );
-
-    map.addChild(new YMapDefaultSchemeLayer());
-}
-
 async function Init(){
-    await ymaps.ready;
+
+    await ymaps.ready();
 
     const mapContainer = document.getElementById('map');
     mapContainer.innerHTML = "";
@@ -33,8 +13,7 @@ async function Init(){
             searchControlProvider: 'yandex#search'
         });
 
-    // Сравним положение, вычисленное по ip пользователя и
-    // положение, вычисленное средствами браузера.
+    
     geolocation.get({
         provider: 'yandex',
         mapStateAutoApply: true
@@ -42,7 +21,7 @@ async function Init(){
         // Красным цветом пометим положение, вычисленное через ip.
         result.geoObjects.options.set('preset', 'islands#redCircleIcon');
         result.geoObjects.get(0).properties.set({
-            balloonContentBody: 'Мое местоположение'
+            balloonContentBody: 'Мое местоположение по IP '
         });
         myMap.geoObjects.add(result.geoObjects);
     });
@@ -54,8 +33,19 @@ async function Init(){
         // Синим цветом пометим положение, полученное через браузер.
         // Если браузер не поддерживает эту функциональность, метка не будет добавлена на карту.
         result.geoObjects.options.set('preset', 'islands#blueCircleIcon');
+        result.geoObjects.get(0).properties.set({
+            balloonContentBody: 'Мое местоположение по геолокации'
+        });
         myMap.geoObjects.add(result.geoObjects);
     });
+
+    myMap.controls.remove('geolocationControl');
+    myMap.controls.remove('searchControl');
+    myMap.controls.remove('trafficControl');
+    myMap.controls.remove('typeSelector');
+    myMap.controls.remove('zoomControl');
+    myMap.controls.remove('rulerControl');
+    myMap.controls.remove('fullscreenControl');
 }
 
-setTimeout(Init, 2000)
+Init()

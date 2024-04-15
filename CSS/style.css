@@ -301,3 +301,7 @@ body{
     height: 30vw;
     width: 100%;
 }
+
+[class*="copyrights-promo"]{
+    display: none !important;
+}
