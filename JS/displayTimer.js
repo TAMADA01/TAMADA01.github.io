@@ -1,1 +1,7 @@
-// import { SetTimer } from "./timer.js";
+import { displayTime } from "./timer.js";
+
+displayTime()
+
+setInterval(()=>{
+    displayTime()
+}, 1000)

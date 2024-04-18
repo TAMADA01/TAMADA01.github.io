@@ -1,36 +1,28 @@
 const routes ={
-    "/" : {
-        url : "Views/home.html",
-        title : "Home"
+    "#": {
+        url: "Views/home.html",
+        title: "Home",
+        button: "home-button"
     },
-    "/map" : {
-        url : "Views/map.html",
-        title : "Map",
-        src : [{url : "https://api-maps.yandex.ru/2.1/?apikey=4eca7cbc-2734-4698-a824-91ad09045a1f&lang=ru_RU", static : true}, {url : "JS/map.js"}]
+    "#map": {
+        url: "Views/map.html",
+        title: "Map",
+        button: "map-button",
+        src: [{url: "https://api-maps.yandex.ru/2.1/?apikey=4eca7cbc-2734-4698-a824-91ad09045a1f&lang=ru_RU", static: true}, {url: "JS/map.js"}]
     },
-    "/time" : {
-        url : "Views/time.html",
-        title : "Time",
-        src : [{url : "JS/displayTimer.js", type : "module"}]
+    "#time": {
+        url: "Views/time.html",
+        title: "Time",
+        button: "time-button",
+        src: [{url: "JS/displayTimer.js", type: "module"}]
     }
 }
 
-function route(event){
-    event = event || window.event;
-    event.preventDefault();
-    window.history.pushState(null, "", event.target.href);
-    locationHandler();
-};
-
 function locationHandler(){
-    let location = window.location.pathname;
-    
-    if (location.length == 0) {
-        location = "/";
-    }
+    let location = window.location.hash;
 
-    if (routes[location] === undefined){
-        location = "/";
+    if (routes[location] == undefined){
+        location = "#";
     }
     const route = routes[location];
 
@@ -38,7 +30,6 @@ function locationHandler(){
     .then(response => response.text())
     .then(result => {
         document.querySelector("#app").innerHTML = result; 
-
         const scriptsContainer = document.querySelector("#scripts")
         const staticScriptsContainer = document.querySelector("#static-scripts")
         scriptsContainer.innerHTML = "";
@@ -65,9 +56,14 @@ function locationHandler(){
                 }
             }
         }
+        console.log('Add scripts')
     })
-
+    
     document.title = route.title;
+
+    document.querySelectorAll(".nav-button-selected").forEach(item => item.classList.remove("nav-button-selected"));
+
+    document.getElementById(route.button).classList.add("nav-button-selected");
 }
 
 window.addEventListener('popstate', (e)=>{
@@ -76,15 +72,3 @@ window.addEventListener('popstate', (e)=>{
 addEventListener("DOMContentLoaded", (e)=>{
     locationHandler()
 })
-
-document.querySelectorAll('.route').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        history.pushState(null, '', this.href);
-        document.querySelectorAll('.nav-button-selected').forEach(item => {
-            item.classList.remove("nav-button-selected");
-        })
-        link.classList.add("nav-button-selected");
-        locationHandler();
-    });
-});
